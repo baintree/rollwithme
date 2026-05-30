@@ -14,16 +14,12 @@ fn main() {
 
     match ans {
         Ok(choice) => {
-            assign_race(choice, &mut character);
+            character.race = choice.to_string();
             prompt_classes(&mut character);
             println!("{}", character.race);
         },
         Err(_) => println!("There was an error reading your choice"),
     }
-}
-
-fn assign_race(choice: &str, character: &mut Character) {
-    character.race = choice.to_string();
 }
 
 fn prompt_classes(character: &mut Character) {
