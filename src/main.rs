@@ -5,7 +5,7 @@ use character::Character;
 use inquire::Select;
 
 fn main() {
-    let character = Character {
+    let mut character = Character {
         race: String::from(""),
         class: String::from("")
     };
@@ -13,12 +13,19 @@ fn main() {
     let ans = Select::new("What is your character's race? (Select \"Other\" if creating a custom race)", constants::RACES.to_vec()).prompt();
 
     match ans {
-        Ok(choice) => println!("{}", assign_race(choice, character)),
+        Ok(choice) => {
+            assign_race(choice, &mut character);
+            prompt_classes(&mut character);
+            println!("{}", character.race);
+        },
         Err(_) => println!("There was an error reading your choice"),
     }
 }
 
-fn assign_race(choice: &str, mut character: Character) -> String {
+fn assign_race(choice: &str, character: &mut Character) {
     character.race = choice.to_string();
-    character.race
+}
+
+fn prompt_classes(character: &mut Character) {
+    //TODO: Add call to fetch classes for this race and populate class propert of Character
 }
