@@ -1,4 +1,13 @@
 pub struct Character {
-    pub race: String,
-    pub class: String
+    pub race: Option<String>,
+    pub class: Option<String>,
+}
+
+impl Character {
+    pub fn new() -> Character{
+        Character {
+            race: None,
+            class: None
+        }
+    }
 }

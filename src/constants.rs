@@ -116,3 +116,19 @@ pub const RACES: [&str; 116] = [
     "Warforged",
     "Yuan-Ti Pureblood",
 ];
+
+pub const CLASSES: [&str; 13] = [
+    "Artificer",
+    "Barbarian",
+    "Bard",
+    "Cleric",
+    "Druid",
+    "Fighter",
+    "Monk",
+    "Paladin",
+    "Ranger",
+    "Rogue",
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+];
